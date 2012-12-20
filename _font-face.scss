@@ -1,0 +1,32 @@
+// ---------------------------------------------------------- //
+/* ==============[ Bulletproof fontface mixin ]============== */
+
+//	Created by Marnu Lombard
+//	github.com/MarnuLombard
+//
+//	Based on Paul Irish's "Bulletproof @fontface"
+//	paulirish.com/2009/bulletproof-font-face-implementation-syntax
+
+//	Provided under the MIT Public License
+//	opensource.org/licenses/MIT
+
+// ---------------------------------------------------------- //
+
+@import "shared";
+
+@mixin font-face($name, $font-files, $eot:false) {
+
+	@font-face {
+		font-family: quote($name);
+		src: font-url($eot);
+		src: local('?'), $font-files; 
+	}
+	
+	@media screen and (max-device-width: 480px) {
+		@font-face {
+			font-family: quote($name);
+			src: $font-files; 
+		}
+	
+	}
+}

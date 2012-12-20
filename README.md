@@ -1,0 +1,1 @@
+A compass replacement @mixin that outputs @fontfaces in line with Paul Irish's Bulletproof Method.
