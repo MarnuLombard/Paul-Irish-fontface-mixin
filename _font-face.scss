@@ -12,21 +12,21 @@
 
 // ---------------------------------------------------------- //
 
-@import "shared";
+@import "compass/css3/shared";
 
 @mixin font-face($name, $font-files, $eot:false) {
 
 	@font-face {
 		font-family: quote($name);
 		src: font-url($eot);
-		src: local('?'), $font-files; 
+		src: local('?'), $font-files;
 	}
-	
+
 	@media screen and (max-device-width: 480px) {
 		@font-face {
 			font-family: quote($name);
-			src: $font-files; 
+			src: $font-files;
 		}
-	
+
 	}
 }
