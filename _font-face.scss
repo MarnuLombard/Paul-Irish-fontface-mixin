@@ -2,7 +2,7 @@
 /* ==============[ Bulletproof fontface mixin ]============== */
 
 //	Created by Marnu Lombard
-//	V2.0
+//	V2.1
 //	github.com/MarnuLombard
 //
 //	Based on Paul Irish's "Bulletproof @fontface"
@@ -13,25 +13,23 @@
 
 // ---------------------------------------------------------- //
 
-@import "compass/css3/shared";
-
-@mixin font-face($name) {
+@mixin font-face($name, $directory: '../fonts/' !default;) {
 
 	@font-face {
 		font-family: quote($name);
-		src: font-url('#{$name}.eot');
+		src: font-url('#{$directory}#{$name}.eot');
 		src: local('?'),
-		 font-url('#{$name}.woff') format("woff"),
-		 font-url('#{$name}.otf') format("opentype"),
-		 font-url('#{$name}.svg##{$name}') format("svg");
+		 font-url('#{$directory}#{$name}.woff') format("woff"),
+		 font-url('#{$directory}#{$name}.otf') format("opentype"),
+		 font-url('#{$directory}#{$name}.svg##{$name}') format("svg");
 	}
 
 	@media screen and (max-device-width: 480px) {
 		@font-face {
 			font-family: quote($name);
-			src: font-url('#{$name}.woff') format("woff"),
-			 font-url('#{$name}.otf') format("opentype"),
-			 font-url('#{$name}.svg##{$name}') format("svg");
+			src: font-url('#{$directory}#{$name}.woff') format("woff"),
+			 font-url('#{$directory}#{$name}.otf') format("opentype"),
+			 font-url('#{$directory}#{$name}.svg##{$name}') format("svg");
 		}
 
 	}
